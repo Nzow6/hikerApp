@@ -18,8 +18,7 @@ public class Main {
         System.out.println("Attempting to connect...");
         connectDB();
         
-        GearRentals gr = new GearRentals();
-        gr.getGear(conn, 1);
+        GearRentals.rentGear(conn, 11,51,"2025-12-01");
         
         
         /*
@@ -39,7 +38,7 @@ public class Main {
     public static void connectDB() {
         try {
             conn = DriverManager.getConnection(DB_URL, USER, PASSWORD);
-            System.out.println("Connected to World DB!");
+            System.out.println("Connected to Hiker DB!");
             /* Test (REMOVE LATER)
             String query = "SELECT * FROM employees";
             Statement st = conn.createStatement();
