@@ -23,6 +23,8 @@ public class Bookings {
         findPrice.append(String.format("WHERE hiking_event_id = '%d'", eventID));
         
         
+        
+        
         //Assign the retrieved record to price
         try {
             Statement st = conn.createStatement();
@@ -43,8 +45,8 @@ public class Bookings {
         //Find hiking event name
         String event;
         StringBuilder findEvent = new StringBuilder();
-        findPrice.append("SELECT hiking_event_name");
-        findPrice.append("FROM hiking_event");
+        findPrice.append("SELECT    hiking_event_name"); //should this be findEvent? 
+        findPrice.append("FROM      hiking_event");
         findPrice.append(String.format("WHERE hiking_event_id = '%d'", eventID));
         
         //Assign the retrieved name to event
@@ -65,15 +67,15 @@ public class Bookings {
         }
         
         //Prepare insert statement
-        double date = ???;
+        double date = 1;//placeholder
         StringBuilder addBooking = new StringBuilder();
         addBooking.append("INSERT INTO   booking(hiker_id, hiking_event, booking_date, payment_method, payment_reference_no, amount_paid)");
-        addBooking.append(String.format("%s, %s, %s, &s, &s, &f", hikerID, event, date, pMethod, pNum, price));
+        //addBooking.append(String.format("%s, %s, %s, &s, &s, &f", hikerID, event, date, pMethod, pNum, price));
         
         //Execute insertion
         PreparedStatement stmt;
-        stmt = conn.prepareCall(addBooking.toString());
-        stmt.executeUpdate();
+        //stmt = conn.prepareCall(addBooking.toString());
+        //stmt.executeUpdate();
         
     }
     

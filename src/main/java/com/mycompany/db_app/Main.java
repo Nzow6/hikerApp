@@ -5,16 +5,23 @@
 package com.mycompany.db_app;
 
 import java.sql.*;
+import com.mycompany.db_app.Models.*;
 
 public class Main {
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/employees";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/hiker_app";
     private static final String USER = "root";
-    private static final String PASSWORD = "secret hehe";
+    private static final String PASSWORD = "4Skinz.123"; //depends on the password set on your local sql
 
     public static Connection conn = null;
 
     public static void main(String[] args) {
+        System.out.println("Attempting to connect...");
         connectDB();
+        
+        GearRentals gr = new GearRentals();
+        gr.getGear(conn, 1);
+        
+        
         /*
         javax.swing.SwingUtilities.invokeLater(() -> {
             UserModel user = new UserModel();

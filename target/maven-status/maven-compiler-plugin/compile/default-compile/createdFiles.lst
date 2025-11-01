@@ -1,2 +1,5 @@
-com\mycompany\db_app\Main.class
+com\mycompany\db_app\Models\Bookings.class
+com\mycompany\db_app\Models\GearRentals.class
+com\mycompany\db_app\View\LoginView.class
 com\mycompany\db_app\Models\User.class
+com\mycompany\db_app\Main.class
